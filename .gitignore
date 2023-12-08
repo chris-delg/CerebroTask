@@ -1,0 +1,11 @@
+*.out
+CMakeFiles
+Makefile
+bin
+*.a
+*.cmake
+test/googletest
+CMakeCache.txt
+cmake_install.cmake
+data/dat_files/*.dat
+data/*.txt
