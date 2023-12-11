@@ -1,21 +1,34 @@
 # CerebroTask
-Authors: [Mahir Patel](https://github.com/mpate132), [Christopher Delgado](https://github.com/chris-delg), [Saif Deras](https://github.com/saifderas) ,[Dorian Martin](https://github.com/dmart218)
+Authors: [Christopher Delgado](https://github.com/chris-delg), [Dorian Martin](https://github.com/dmart218), [Mahir Patel](https://github.com/mpate132), [Saif Deras](https://github.com/saifderas)
 
 ## Project Description
-  * Why is it important or interesting to you?
-     * A task manager is important/interesting to us because time management is the main concern for us students and we want to make it cooler rather than using NotionAi, Google Task Scheduler, which is compatible with students.
-     * The idea of being told how we can actually complete said tasks is an interesting feature we would like to implement in our project.
-  * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
-     * We plan to use C++, Qt, OpenAI API, GitHub, Googletest, Git, Cmake, gdb, and Valgrind.
-  * What will be the input/output of your project?
-     * The input of the project would be mainly through a GUI, specifically through a text box located on the GUI. The output would then be displayed directly onto the GUI for the user to see.
-  * What are the features that the project provides?
-     * The ability for users to input what tasks they need done.
-     * Saving/loading the user’s schedule.
-     * Giving the user the ability to mark tasks as completed while also giving them the option to revert that task.
-     * Having an option to ask from help on specific tasks using the openAI API.
+CerebroTask is a task manager that allows for users to leverage the OpenAI API in order to get step by step instructions from an AI model on how to complete a chosen task without leaving the program. CerebroTask allows for users to login and view/edit their account specific tasks with every change being saved so that tasks and task details are not lost between sessions.
 
- 
+
+## Installation/Usage
+ First check if you have these requirements :
+
+ + C++11/C++14/C++17/C++20 compatible compiler
+ + [libcurl](https://curl.se/libcurl/) (check [Install curl](https://everything.curl.dev/get) to make sure you have the development package)
+
+ Next make sure that the GoogleTest submodule is correctly connected to the project by running this command :
+ ```bash
+ git submodule add -f https://github.com/google/googletest.git test/googletest
+ ```
+ Next add the location of where your data will be stored by running these commands :
+ ```bash
+ mkdir data && cd data
+ mkdir dat_files
+ ```
+  
+  Finally to build and compile run the following : 
+  ```bash
+  cmake . && make
+  ./bin/cerebroTask
+  ```
+
+
+<!---
 ## User Interface Specification
 ### Navigation Diagram
 ![navigation diagram](https://github.com/cs100/final-project-cdelg036-dmart218-sdera006-mpate132/blob/master/img/interface%20diagram.png)
@@ -93,7 +106,8 @@ The settings tab will allow the user to change the UI and enable other features 
    - Testing becomes more targeted and specific, as each class handles a distinct responsibility. This simplifies the testing process and improves test coverage.
 
 By applying the Single Responsibility Principle through the creation of specialized classes, the code becomes more modular, maintainable, and easier to comprehend, which ultimately aids in writing better quality code.
- 
+-->
+
  ## Screenshots
  #### The logn menu :
  ![image](https://github.com/cs100/final-project-cdelg036-dmart218-sdera006-mpate132/blob/master/img/login.png)
@@ -109,30 +123,9 @@ By applying the Single Responsibility Principle through the creation of speciali
 
  #### Logging out and quitting the program :
  ![image](https://github.com/cs100/final-project-cdelg036-dmart218-sdera006-mpate132/blob/master/img/logout_and_quit.png)
-
- ## Installation/Usage
- First check if you have these requirements :
-
- + C++11/C++14/C++17/C++20 compatible compiler
- + [libcurl](https://curl.se/libcurl/) (check [Install curl](https://everything.curl.dev/get) to make sure you have the development package)
-
- Next make sure that the GoogleTest submodule is correctly connected to the project by running this command :
- ```bash
- git submodule add -f https://github.com/google/googletest.git test/googletest
- ```
- Next add the location of where your data will be stored by running these commands :
- ```bash
- mkdir data && cd data
- mkdir dat_files
- ```
-  
-  Finally to build and compile run the following : 
-  ```bash
-  cmake . && make
-  ./bin/cerebroTask
-  ```
+ 
 
  ## Testing
-We utilized the Google Test framework to thoroughly validate and test our program, adopting a meticulous approach to ensure comprehensive testing. To enhance organizational clarity, we established a dedicated test folder. This improves the readability of our code. Here we structured our tests into distinct files, including fileTest.cpp, openaiTest.cpp, ui_test.cpp, task_test.cpp, and user_test.cpp. Our testing regimen was comprehensive, encompassing a combination of EXPECTs and ASSERTs to extensively evaluate the robustness and reliability of our code. By selecting Google Test as our framework and structuring our tests meticulously, we are not only safeguarding the reliability of our current code, however we are also laying a solid foundation for future development and enhancements.
+We utilized the Google Test framework to thoroughly validate and test our program, adopting a meticulous approach to ensure comprehensive testing. To enhance organizational clarity, we established a dedicated test folder. This improves the readability of our code. Here we structured our tests into distinct files, including fileTest.cpp, openaiTest.cpp, ui_test.cpp, etc.
 
  
